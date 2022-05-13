@@ -1,13 +1,15 @@
 {% load static %}
 
 <div class="row tm-mb-90 tm-gallery">
-    {% for d in data %}
+    {% for d in posts %}
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
         <figure class="effect-ming tm-video-item">
-            <img src="{{ d.image.url }}" alt="Image" class="img-fluid">
+            <video alt="Video" class="img-fluid" autoplay loop>
+                <source src="{{ d.video.url }}">
+            </video>
             <figcaption class="d-flex align-items-center justify-content-center">
                 <h2>Play</h2>
-                <a href="{% url 'video_detail' %}">View more</a>
+                <a href="{% url 'video_detail' d.id %}">View more</a>
             </figcaption>
         </figure>
         <div class="d-flex justify-content-between tm-text-gray">
