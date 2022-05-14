@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="wrapper">
+    <div id="page-wrapper" >
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                <h2>Registration page</h2>
+                        <div class="col-lg-4 col-12 mb-5">
+                            <form id="contact-form" action="." method="POST" class="tm-contact-form mx-auto">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <div class="form-group tm-text-right">
+                                    <button type="submit" class="btn btn-primary">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                </div>            
+            </div>              
+            <hr/>         
+        </div>
+    </div>
+</div>
+{% endblock %}
